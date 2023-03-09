@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block main-content %}
+    <form method="post">
+        {% csrf_token %}
+       
+        <label>Enter Title:</label>
+        <input type="text" name="title" class="form-control">
+        <br>
+        <br>
+
+        <label>Enter selling_price:</label>
+        <input type="number" name="selling_price" class="form-control">
+        <br>
+        <br>
+
+        <label>discounted_price:</label>
+        <input type="number" name="discounted_price" class="form-control">
+        <br>
+        <br>
+
+        <label>description:</label>
+        <input type="text" name="description" class="form-control">
+        <br>
+        <br>
+
+        <label>brand:</label>
+        <input type="text" name="brand" class="form-control">
+        <br>
+
+
+        <label>Category:</label>
+        <select class="form-select" title="category"  id="category" name="category" aria-label="Default select example">
+           
+            <option value="M">Mobile</option>
+            <option value="L">laptop</option>
+            <option value="TW">Topwear</option>
+            <option value="BW">Bottomwear</option>
+          </select>
+
+        <label>product_image:</label>
+        <input type="file" name="product_image" class="form-control"> 
+        
+
+
+        <input type="submit" value="Add Product" class="btn btn-outline-danger">
+    </form>
+    
+    {% endblock main-content %}
+    
+    
+</body>
+</html>

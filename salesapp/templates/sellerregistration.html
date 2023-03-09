@@ -1,0 +1,18 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Seller Login{% endblock title %}
+{% block main-content %}
+{% if messages %}
+{% for message in messages%}
+{{message}}
+{% endfor %}
+{% endif %}
+<div class="container">
+    <h2>Seller Registration</h2>
+    <form action="" method="post">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" name="submit" value="Signup">
+    </form>
+  </div>
+{% endblock main-content %}
